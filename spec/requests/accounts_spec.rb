@@ -21,7 +21,6 @@ RSpec.describe AccountsController, type: :controller do
         expect(body["token"]).to be_present
       end
     end
-
       # context "with invalid parameters" do
       #     let(:invalid_params) do
       #       { data: { attributes: { email: nil, password: nil } } }
