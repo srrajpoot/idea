@@ -1,0 +1,77 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  full_phone_number: MyString
+  country_code: 1
+  phone_number: 
+  email: MyString
+  activated: false
+  device_id: MyString
+  unique_auth_id: MyText
+  password_digest: MyString
+  type: 
+  user_name: MyString
+  platform: MyString
+  user_type: MyString
+  app_language_id: 1
+  last_visit_at: 2024-04-11 13:25:22
+  is_blacklisted: false
+  suspend_until: 2024-04-11
+  status: 1
+  stripe_id: MyString
+  stripe_subscription_id: MyString
+  stripe_subscription_date: 2024-04-11 13:25:22
+  role_id: 1
+  full_name: MyString
+  gender: 1
+  date_of_birth: 2024-04-11
+  age: 1
+  is_paid: false
+  middle_name: MyString
+  city: MyString
+  country: MyString
+  background: MyText
+  uid: MyString
+  day: MyString
+  month: MyString
+  year: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  full_phone_number: MyString
+  country_code: 1
+  phone_number: 
+  email: MyString
+  activated: false
+  device_id: MyString
+  unique_auth_id: MyText
+  password_digest: MyString
+  type: 
+  user_name: MyString
+  platform: MyString
+  user_type: MyString
+  app_language_id: 1
+  last_visit_at: 2024-04-11 13:25:22
+  is_blacklisted: false
+  suspend_until: 2024-04-11
+  status: 1
+  stripe_id: MyString
+  stripe_subscription_id: MyString
+  stripe_subscription_date: 2024-04-11 13:25:22
+  role_id: 1
+  full_name: MyString
+  gender: 1
+  date_of_birth: 2024-04-11
+  age: 1
+  is_paid: false
+  middle_name: MyString
+  city: MyString
+  country: MyString
+  background: MyText
+  uid: MyString
+  day: MyString
+  month: MyString
+  year: MyString

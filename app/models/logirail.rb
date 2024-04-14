@@ -1,0 +1,2 @@
+class Logirail < ApplicationRecord
+end

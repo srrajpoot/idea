@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  namespace: MyString
+  body: MyText
+  resource_type: MyString
+  resource: one
+  resource_type: Resource
+  author_type: MyString
+  author: one
+  author_type: Author
+
+two:
+  namespace: MyString
+  body: MyText
+  resource_type: MyString
+  resource: two
+  resource_type: Resource
+  author_type: MyString
+  author: two
+  author_type: Author
