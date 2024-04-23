@@ -2,7 +2,9 @@ class Account < ApplicationRecord
   self.table_name = :accounts
 
   include Wisper::Publisher
-
+  
+  validates :email, presence: true
+  validates :password, presence: true
 
   # has_secure_password
   # before_validation :parse_full_phone_number
@@ -14,7 +16,7 @@ class Account < ApplicationRecord
   # validate :validate_user_name_for_email_account
   before_create :generate_uid
 
-  has_many :add_ideas, class_name: "Settings::AddIdea", dependent: :destroy
+  # has_many :add_ideas, class_name: "Settings::AddIdea", dependent: :destroy
 
   enum status: %i[regular suspended deleted]
   enum user_type: %i[ideator visitor]

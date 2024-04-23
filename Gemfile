@@ -24,6 +24,8 @@ gem 'devise'
 gem 'activeadmin'
 gem 'sass-rails'
 gem 'carrierwave'
+gem 'geocoder'
+
 
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]

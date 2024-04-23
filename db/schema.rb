@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_14_112815) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_22_074834) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +69,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_14_112815) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
   end
 
+  create_table "add_ideas", force: :cascade do |t|
+    t.string "title"
+    t.integer "idea_type"
+    t.bigint "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_add_ideas_on_account_id"
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "country"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.integer "addressble_id"
+    t.string "addressble_type"
+    t.integer "address_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -88,6 +109,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_14_112815) do
     t.datetime "valid_until", precision: nil
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.text "description"
+    t.bigint "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_feedbacks_on_account_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "like_by_id"
+    t.string "likeable_type", null: false
+    t.bigint "likeable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
+  end
+
   create_table "logins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -101,6 +139,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_14_112815) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "body"
+    t.string "location"
+    t.bigint "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_posts_on_account_id"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sms_otps", force: :cascade do |t|
     t.string "full_phone_number"
     t.integer "pin"
@@ -108,4 +164,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_14_112815) do
     t.datetime "valid_until", precision: nil
   end
 
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "add_ideas", "accounts"
+  add_foreign_key "feedbacks", "accounts"
+  add_foreign_key "posts", "accounts"
 end

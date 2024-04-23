@@ -21,6 +21,12 @@ post '/fedbacks', to: 'feedbacks#create'
   resources :posts, only: [:index, :show, :create, :update, :destroy]
 
 
-
+  resources :accounts, only: [:create] do
+    collection do
+      put :change_email
+      put :change_password
+      post :forget_password
+    end
+  end
 
 end
